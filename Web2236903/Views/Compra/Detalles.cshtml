@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Web2236903.Models.Detalles>
+@{
+    ViewBag.Title = "Detalles";
+}
+
+<h2>Detalles</h2>
+
+<table class="table">
+    <tr>
+        <th>Nombre Cliente</th>
+        <th>Documento Cliente</th>
+        <th>Correo Cliente</th>
+        <th>Fecha Compra</th>
+        <th>Total Compra</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.nombreCliente)</td>
+            <td>@Html.DisplayFor(modelItem => item.documentoCliente)</td>
+            <td>@Html.DisplayFor(modelItem => item.correoCliente)</td>
+            <td>@Html.DisplayFor(modelItem => item.fechaCompra)</td>
+            <td>@Html.DisplayFor(modelItem => item.totalCompra)</td>
+        </tr>
+    }
+</table>
+@Html.ActionLink("Generar Pdf", "PdfReport");
